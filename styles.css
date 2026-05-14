@@ -1,4 +1,3 @@
-/* Estilos básicos y simples para un prototipo amateur */
 body {
     font-family: serif;
     background-color: white;
@@ -6,7 +5,7 @@ body {
 }
 
 .contenedor {
-    width: 600px;
+    width: 800px;
     margin: 20px auto;
     border: 1px solid black;
     padding: 20px;
@@ -16,6 +15,65 @@ h1 {
     font-size: 24px;
     border-bottom: 1px solid black;
     padding-bottom: 10px;
+}
+
+.pasos {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid black;
+}
+
+.paso {
+    color: gray;
+}
+
+.paso.activo {
+    color: black;
+    font-weight: bold;
+}
+
+.disposicion-principal {
+    display: flex;
+    gap: 20px;
+}
+
+.columna-formulario {
+    flex: 3;
+}
+
+.columna-lateral {
+    flex: 1;
+}
+
+.lista-chequeo {
+    border: 1px solid black;
+    padding: 15px;
+    background-color: #f9f9f9;
+    position: sticky;
+    top: 20px;
+}
+
+.lista-chequeo h3 {
+    margin-top: 0;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.lista-chequeo ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-chequeo li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.completado {
+    color: green;
+    text-decoration: line-through;
 }
 
 fieldset {
@@ -39,19 +97,19 @@ label {
 
 input[type="text"],
 input[type="email"] {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     padding: 3px;
     border: 1px solid gray;
 }
 
-/* Zona de arrastrar y soltar (Drag and drop) */
 .zona-arrastrar {
     border: 2px dashed black;
     padding: 30px;
     text-align: center;
     background-color: #f9f9f9;
     position: relative;
-    width: 300px;
+    max-width: 300px;
     margin-top: 5px;
 }
 
@@ -70,7 +128,6 @@ input[type="email"] {
     cursor: pointer;
 }
 
-/* Tooltip (Ayuda) */
 .ayuda {
     color: blue;
     cursor: help;
