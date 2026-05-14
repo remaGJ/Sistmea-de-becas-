@@ -1,0 +1,112 @@
+/* Estilos básicos y simples para un prototipo amateur */
+body {
+    font-family: serif;
+    background-color: white;
+    color: black;
+}
+
+.contenedor {
+    width: 600px;
+    margin: 20px auto;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 300px;
+    padding: 3px;
+    border: 1px solid gray;
+}
+
+/* Zona de arrastrar y soltar (Drag and drop) */
+.zona-arrastrar {
+    border: 2px dashed black;
+    padding: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    position: relative;
+    width: 300px;
+    margin-top: 5px;
+}
+
+.texto-arrastrar {
+    font-size: 14px;
+    color: black;
+}
+
+.entrada-archivo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Tooltip (Ayuda) */
+.ayuda {
+    color: blue;
+    cursor: help;
+    position: relative;
+    font-size: 14px;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.ayuda::after {
+    content: attr(data-ayuda);
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    background-color: #ffffcc;
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 12px;
+    width: 200px;
+    display: none;
+    z-index: 10;
+}
+
+.ayuda:hover::after {
+    display: block;
+}
+
+.boton-enviar {
+    background-color: #eeeeee;
+    border: 1px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: serif;
+}
+
+.boton-enviar:hover {
+    background-color: #dddddd;
+}
