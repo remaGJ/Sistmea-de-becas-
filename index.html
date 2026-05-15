@@ -9,23 +9,27 @@
 </head>
 
 <body>
-    <div class="contenedor">
-        <h1>Módulo: Postulación y Documentos</h1>
+    <main class="contenedor">
+        
+        <header>
+            <h1>&#9635; Módulo: Postulación y Documentos</h1>
 
-        <div class="pasos">
-            <span class="paso activo">1. Datos Personales</span> -&gt;
-            <span class="paso activo">2. Carga de Archivos</span> -&gt;
-            <span class="paso">3. Revisión Final</span>
-        </div>
+            <nav class="pasos" aria-label="Progreso de la postulación">
+                <span class="paso activo">&#9998; 1. Datos Personales</span> &rarr;
+                <span class="paso activo">&#8681; 2. Carga de Archivos</span> &rarr;
+                <span class="paso">&#10003; 3. Revisión Final</span>
+            </nav>
 
-        <p>Complete el formulario y suba sus documentos.</p>
+            <p>Complete el formulario y suba sus documentos.</p>
+        </header>
 
         <div class="disposicion-principal">
-            <div class="columna-formulario">
+            
+            <section class="columna-formulario">
                 <form action="#" method="POST" enctype="multipart/form-data">
 
                     <fieldset>
-                        <legend>Datos Personales</legend>
+                        <legend>&#9998; Datos Personales</legend>
                         <div class="grupo-formulario">
                             <label for="nombre">Nombre Completo:</label>
                             <input type="text" id="nombre" name="nombre" required>
@@ -37,16 +41,17 @@
                     </fieldset>
 
                     <fieldset>
-                        <legend>Carga de Documentos</legend>
+                        <legend>&#8681; Carga de Documentos</legend>
 
                         <div class="grupo-formulario">
                             <label for="doc_identidad">
                                 Cédula
                                 <span class="ayuda" tabindex="0"
-                                    data-ayuda="El PDF no debe pesar más de 2MB.">[?]</span>
+                                    data-ayuda="El PDF no debe pesar más de 2MB.">&#8505;</span>
                             </label>
 
                             <div class="zona-arrastrar">
+                                <div class="icono-grande">&#8681;</div>
                                 <span class="texto-arrastrar">Arrastre el archivo aquí o haga clic</span>
                                 <input type="file" id="doc_identidad" name="doc_identidad" accept=".pdf"
                                     class="entrada-archivo" required>
@@ -57,10 +62,11 @@
                             <label for="cert_notas">
                                 Récord Académico
                                 <span class="ayuda" tabindex="0"
-                                    data-ayuda="Debe ser el certificado del último periodo académico. Máximo 5MB.">[?]</span>
+                                    data-ayuda="Debe ser el certificado del último periodo académico. Máximo 5MB.">&#8505;</span>
                             </label>
 
                             <div class="zona-arrastrar">
+                                <div class="icono-grande">&#8681;</div>
                                 <span class="texto-arrastrar">Arrastre el archivo aquí o haga clic</span>
                                 <input type="file" id="cert_notas" name="cert_notas" accept=".pdf"
                                     class="entrada-archivo" required>
@@ -71,10 +77,11 @@
                             <label for="planilla_luz">
                                 Planilla de luz
                                 <span class="ayuda" tabindex="0"
-                                    data-ayuda="Debe ser una planilla de los últimos 3 meses.">[?]</span>
+                                    data-ayuda="Debe ser una planilla de los últimos 3 meses.">&#8505;</span>
                             </label>
 
                             <div class="zona-arrastrar">
+                                <div class="icono-grande">&#8681;</div>
                                 <span class="texto-arrastrar">Arrastre el archivo aquí o haga clic</span>
                                 <input type="file" id="planilla_luz" name="planilla_luz" accept=".pdf"
                                     class="entrada-archivo" required>
@@ -82,48 +89,42 @@
                         </div>
                     </fieldset>
 
+                    <fieldset>
+                        <legend>&#9745; Vista Previa de Documentos</legend>
+                        <p style="font-size: 14px; margin-bottom: 10px;">Verifique sus documentos antes de enviar:</p>
+                        <div class="contenedor-vista-previa">
+                            <span style="font-size: 14px; color: gray;">(Los documentos subidos aparecerán en esta área)</span>
+                        </div>
+                    </fieldset>
+
                     <div class="acciones-formulario">
-                        <button type="submit" class="boton-enviar">Siguiente</button>
+                        <button type="submit" class="boton-enviar">&#10003; Siguiente</button>
                     </div>
                 </form>
-            </div>
+            </section>
 
-            <div class="columna-lateral">
-                <div class="lista-chequeo">
-                    <h3>Requisitos</h3>
-                    <ul id="lista_requisitos">
-                        <li id="req_doc_identidad">[-] Cédula</li>
-                        <li id="req_cert_notas">[-] Récord Académico</li>
-                        <li id="req_planilla_luz">[-] Planilla de luz</li>
+            <aside class="columna-lateral">
+                
+                <section class="lista-chequeo">
+                    <h3>&#9776; Requisitos</h3>
+                    <ul>
+                        <li>&bull; Cédula</li>
+                        <li>&bull; Récord Académico</li>
+                        <li>&bull; Planilla de luz</li>
                     </ul>
-                </div>
-            </div>
+                </section>
+
+                <section class="tips-postulacion">
+                    <h3>&#9888; Tips para una postulación exitosa</h3>
+                    <ul>
+                        <li>Verifique que el PDF sea legible y no esté borroso.</li>
+                        <li>Evite subir documentos protegidos con contraseña.</li>
+                        <li>Asegúrese de que el archivo pese menos de lo indicado en cada sección.</li>
+                    </ul>
+                </section>
+            </aside>
         </div>
-    </div>
-
-    <script>
-        // Función simple para actualizar la lista de chequeo cuando se sube un archivo
-        function actualizarChequeo(inputId, reqId) {
-            const input = document.getElementById(inputId);
-            const req = document.getElementById(reqId);
-            const textoOriginal = req.innerText.substring(4); // Remover "[-] " o "[x] "
-
-            input.addEventListener('change', function () {
-                if (this.files && this.files.length > 0) {
-                    req.innerText = '[x] ' + textoOriginal;
-                    req.classList.add('completado');
-                } else {
-                    req.innerText = '[-] ' + textoOriginal;
-                    req.classList.remove('completado');
-                }
-            });
-        }
-
-        // Aplicamos la función a cada input y su respectivo ítem de la lista
-        actualizarChequeo('doc_identidad', 'req_doc_identidad');
-        actualizarChequeo('cert_notas', 'req_cert_notas');
-        actualizarChequeo('planilla_luz', 'req_planilla_luz');
-    </script>
+    </main>
 </body>
 
 </html>
